@@ -1,0 +1,43 @@
+.sprinkles {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  border-radius: 50%;
+  animation: sprinkle 1s ease-in-out infinite;
+}
+
+@keyframes sprinkle {
+  0% {
+    transform: translate(-50%, 0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, 400px) scale(0.5);
+    opacity: 0;
+  }
+}
+
+/* Add more sprinkle dots */
+.sprinkles::before,
+.sprinkles::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  border-radius: 50%;
+  animation: sprinkle 1s ease-in-out infinite;
+}
+
+.sprinkles::before {
+  left: -30px;
+  animation-delay: 0.2s;
+}
+
+.sprinkles::after {
+  left: 30px;
+  animation-delay: 0.4s;
+}
